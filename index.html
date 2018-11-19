@@ -11,13 +11,15 @@
 
 <body id="home">
   <script>
+    let survey_url = 'https://www.unipark.de/uc/robot_capabilities/'
+    let plain_url = 'https://firefoxmetzger.github.io/robot_capabilities_glue/'
     let url = window.location.href;
     url = url.replace('assignmentId','a');
     url = url.replace('hitId','b');
     url = url.replace('turkSubmitTo','c');
     url = url.replace('workerId','d');
-    url = url.replace('https://firefoxmetzger.github.io/robot_capabilities_glue/','https://www.unipark.de/uc/robot_capabilities/')
-    console.log(url);
+    url = url.replace(plain_url,survey_url);
+    window.location.href = url;
 	  
   </script>
 
