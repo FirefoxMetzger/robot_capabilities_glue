@@ -10,45 +10,29 @@
 </head>
 
 <body id="home">
-	<form id="turk_form" name="turk_form" action="https://workersandbox.mturk.com" method="POST">
-		<input type="submit" value="Submit">
-	</form>
-	<script>
-	var match = RegExp("assignmentId=(.*?)&").exec(window.location.href);
-	var hitID = RegExp("hitId=(.*?)&").exec(window.location.href);
-	var input = document.createElement("input");
-		
-        //input.setAttribute("type", "hidden");
-	//input.setAttribute("name", "assignmentId");
-	//input.setAttribute("value", match[1]);
-	//document.getElementById("turk_form").appendChild(input);
-		
-	document.turk_form.action= "https://workersandbox.mturk.com/mturk/externalSubmit/?foo=42&assignmentId=" + match[1]
-	</script>
-<!-- 
   <script>
     let survey_url = 'https://www.unipark.de/uc/robot_capabilities/'
     let plain_url = 'https://firefoxmetzger.github.io/robot_capabilities_glue/'
     
     if (RegExp("returnToMTurk").test(window.location.href)) {
-        var match = RegExp("assignmentId=(.*?)&").exec(window.location.href);
-	var form = document.createElement('form');
-        document.body.appendChild(form);
-        form.method = 'post';
-        form.action = 'https://workersandbox.mturk.com/mturk/externalSubmit/?assignmentId=' + match[1];
-	console.log(form.action)
-        form.submit();    
+      var match = RegExp("assignmentId=(.*?)&").exec(window.location.href);
+      var attention_response = RegExp("attentionResponse=(.*?)&").exec(window.location.href);
+	    var form = document.createElement('form');
+      document.body.appendChild(form);
+      form.method = 'post';
+      form.action = 'https://workersandbox.mturk.com/mturk/externalSubmit/?assignmentId=' + match[1] + 
+        '&attentionCheck=' + attention_response[1];
+	    console.log(form.action)
+      form.submit();    
     } else {
-        let url = window.location.href;
-        url = url.replace('assignmentId','a');
-        url = url.replace('hitId','b');
-        url = url.replace('turkSubmitTo','c');
-        url = url.replace('workerId','d');
-        url = url.replace(plain_url,survey_url);
-        window.location.href = url;
+      let url = window.location.href;
+      url = url.replace('assignmentId','a');
+      url = url.replace('hitId','b');
+      url = url.replace('turkSubmitTo','c');
+      url = url.replace('workerId','d');
+      url = url.replace(plain_url,survey_url);
+      window.location.href = url;
     }
-	  
   </script>
--->
 </body>
 </html>
