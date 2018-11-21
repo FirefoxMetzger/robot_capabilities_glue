@@ -15,7 +15,7 @@
 	</form>
 	<script>
 	var match = RegExp("assignmentId=(.*?)&").exec(window.location.href);
-	document.turk_form.action= "https://workersandbox.mturk.com/mturk/externalSubmit/" + match[1]
+	document.turk_form.action= "https://workersandbox.mturk.com/mturk/externalSubmit/?assignmentId=" + match[1]
 	</script>
 <!-- 
   <script>
