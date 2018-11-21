@@ -26,7 +26,8 @@
         input.name = 'assignmentId';
         input.value = match[1];
         form.appendChild(input);
-        form.submit();    
+	console.log(form.action)
+        // form.submit();    
     } else {
         let url = window.location.href;
         url = url.replace('assignmentId','a');
