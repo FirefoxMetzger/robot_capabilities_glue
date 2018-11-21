@@ -17,12 +17,13 @@
 	var match = RegExp("assignmentId=(.*?)&").exec(window.location.href);
 	var hitID = RegExp("hitId=(.*?)&").exec(window.location.href);
 	var input = document.createElement("input");
-        input.setAttribute("type", "hidden");
-	input.setAttribute("name", "assignmentId");
-	input.setAttribute("value", match[1]);
-	//append to form element that you want .
-	document.getElementById("turk_form").appendChild(input);
-	// document.turk_form.action= "https://workersandbox.mturk.com/mturk/externalSubmit/?assignmentId=" + match[1]
+		
+        //input.setAttribute("type", "hidden");
+	//input.setAttribute("name", "assignmentId");
+	//input.setAttribute("value", match[1]);
+	//document.getElementById("turk_form").appendChild(input);
+		
+	document.turk_form.action= "https://workersandbox.mturk.com/mturk/externalSubmit/?foo=42&assignmentId=" + match[1]
 	</script>
 <!-- 
   <script>
