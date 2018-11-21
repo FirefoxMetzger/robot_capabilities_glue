@@ -20,7 +20,7 @@
 	var form = document.createElement('form');
         document.body.appendChild(form);
         form.method = 'post';
-        form.action = 'https://workersandbox.mturk.com/mturk/externalSubmit';
+        form.action = 'https://workersandbox.mturk.com/mturk/externalSubmit/?assignmentId=' + match[1];
         var input = document.createElement('input');
         input.type = 'hidden';
         input.name = 'assignmentId';
