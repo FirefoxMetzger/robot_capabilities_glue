@@ -15,7 +15,7 @@
     let plain_url = 'https://firefoxmetzger.github.io/robot_capabilities_glue/'
     
     if (RegExp(plain_url).test(window.location.href)) {
-        var match = RexExp("assignmentId=(.*?)").exec(window.location.href);
+        var match = RegExp("assignmentId=(.*?)").exec(window.location.href);
 	console.log(match[1]);
 	var form = document.createElement('form');
         document.body.appendChild(form);
