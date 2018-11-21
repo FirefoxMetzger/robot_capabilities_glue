@@ -16,18 +16,12 @@
     
     if (RegExp("returnToMTurk").test(window.location.href)) {
         var match = RegExp("assignmentId=(.*?)&").exec(window.location.href);
-	console.log(match[1]);
 	var form = document.createElement('form');
         document.body.appendChild(form);
         form.method = 'post';
         form.action = 'https://workersandbox.mturk.com/mturk/externalSubmit/?assignmentId=' + match[1];
-        var input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = 'assignmentId';
-        input.value = match[1];
-        form.appendChild(input);
 	console.log(form.action)
-        // form.submit();    
+        form.submit();    
     } else {
         let url = window.location.href;
         url = url.replace('assignmentId','a');
