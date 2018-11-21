@@ -14,7 +14,7 @@
     let survey_url = 'https://www.unipark.de/uc/robot_capabilities/'
     let plain_url = 'https://firefoxmetzger.github.io/robot_capabilities_glue/'
     
-    if (RegExp(plain_url).test(window.location.href)) {
+    if (RegExp("returnToMTurk").test(window.location.href)) {
         var match = RegExp("assignmentId=(.*?)").exec(window.location.href);
 	console.log(match[1]);
 	var form = document.createElement('form');
