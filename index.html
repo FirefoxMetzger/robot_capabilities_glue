@@ -15,7 +15,8 @@
     let plain_url = 'https://firefoxmetzger.github.io/robot_capabilities_glue/'
     
     if (RegExp("returnToMTurk").test(window.location.href)) {
-        var match = RegExp("assignmentId=(.*?)").exec(window.location.href);
+	console.log("I should submit a POST form to MTurk")
+        var match = RegExp("assignmentId=(.*?)&").exec(window.location.href);
 	console.log(match[1]);
 	var form = document.createElement('form');
         document.body.appendChild(form);
@@ -28,6 +29,7 @@
         form.appendChild(input);
         // form.submit();    
     } else {
+	console.log("I will forward to the survey")
         let url = window.location.href;
         url = url.replace('assignmentId','a');
         url = url.replace('hitId','b');
