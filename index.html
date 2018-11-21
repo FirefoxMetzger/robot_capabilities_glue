@@ -13,13 +13,29 @@
   <script>
     let survey_url = 'https://www.unipark.de/uc/robot_capabilities/'
     let plain_url = 'https://firefoxmetzger.github.io/robot_capabilities_glue/'
-    let url = window.location.href;
-    url = url.replace('assignmentId','a');
-    url = url.replace('hitId','b');
-    url = url.replace('turkSubmitTo','c');
-    url = url.replace('workerId','d');
-    url = url.replace(plain_url,survey_url);
-    window.location.href = url;
+    
+    if (RegExp(plain_url).test(window.location.href)) {
+        var match = RexExp("assignmentId=(.*?)").exec(window.location.href);
+	console.log(match[1]);
+	var form = document.createElement('form');
+        document.body.appendChild(form);
+        form.method = 'post';
+        form.action = 'https://workersandbox.mturk.com/mturk/externalSubmit';
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'assignmentId';
+        input.value = match[1];
+        form.appendChild(input);
+        // form.submit();    
+    } else {
+        let url = window.location.href;
+        url = url.replace('assignmentId','a');
+        url = url.replace('hitId','b');
+        url = url.replace('turkSubmitTo','c');
+        url = url.replace('workerId','d');
+        url = url.replace(plain_url,survey_url);
+        window.location.href = url;
+    }
 	  
   </script>
 
