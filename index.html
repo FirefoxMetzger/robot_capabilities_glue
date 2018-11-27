@@ -10,6 +10,7 @@
 </head>
 
 <body id="home">
+  <img src="PreviewQuestionnaire.png" />
   <script>
     let survey_url = 'https://www.unipark.de/uc/robot_capabilities/'
     let plain_url = 'https://firefoxmetzger.github.io/robot_capabilities_glue/'
@@ -23,7 +24,9 @@
       form.action = 'https://workersandbox.mturk.com/mturk/externalSubmit/?assignmentId=' + match[1] + 
         '&attentionCheck=' + attention_response[1];
 	    console.log(form.action)
-      form.submit();    
+      form.submit();
+    } else if (RegExp("ASSIGNMENT_ID_NOT_AVAILABLE").test(window.location.href)) {
+      // do nothing
     } else {
       let url = window.location.href;
       url = url.replace('assignmentId','a');
