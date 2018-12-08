@@ -18,6 +18,7 @@
     let mturk_url = 'https://workersandbox.mturk.com/mturk/externalSubmit'
     
     if (RegExp("returnToMTurk").test(window.location.href)) {
+      console.log(window.location.href);
       var match = RegExp("assignmentId=(.*?)&").exec(window.location.href);
       var attention_response = RegExp("attentionCheckPassed=(.*?)&").exec(window.location.href);
 	    var form = document.createElement('form');
