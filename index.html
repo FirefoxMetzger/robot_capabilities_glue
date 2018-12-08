@@ -19,7 +19,7 @@
     
     if (RegExp("returnToMTurk").test(window.location.href)) {
       var match = RegExp("assignmentId=(.*?)&").exec(window.location.href);
-      var attention_response = RegExp("attentionResponse=(.*?)&").exec(window.location.href);
+      var attention_response = RegExp("attentionCheckPassed=(.*?)&").exec(window.location.href);
 	    var form = document.createElement('form');
       document.body.appendChild(form);
       form.method = 'post';
